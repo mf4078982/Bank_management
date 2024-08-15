@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block text %}
+<div class="div row">
+    <div class="div col-sm-5 offset-sm-3 alert alert-danger">
+        <h1 class="alert alert-success"><i><b>Account exit</b></i></h1>
+        <h5>thank you! your account exit</h5>
+        <h5>has been successfully exited</h5>
+        <a href="{% url 'home' %}" class="btn btn-dark">home</a>
+        <a href="{% url 'add' %}" class="btn btn-dark">Add page</a>
+    </div>
+</div>
+
+
+{% endblock text %}

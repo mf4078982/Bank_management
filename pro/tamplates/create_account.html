@@ -1,0 +1,17 @@
+<!-- add_member.html -->
+{% extends "base.html" %}
+
+{% block text %}
+<div class="row">
+    <div class="col-sm-6 offset-sm-3">
+        <h1 class="alert alert-success text-center"><i><b>ADD A MEMBER</b></i></h1>
+        <form method="post" action="{% url 'add' %}">
+            {% csrf_token %}
+            {{ forms.as_p }}  <!-- Changed from `forms` to `form` to match context variable -->
+            <input type="submit" value="Add member" class="btn btn-dark">
+            <a href="{% url 'show' %}" class="btn btn-dark">Show Members</a>
+            <a href="{% url 'home' %}" class="btn btn-dark">More Options</a>
+        </form>
+    </div>
+</div>
+{% endblock text %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block text %}
+<div class="div row-sm-6">
+    <div class="div col-sm-6 offset-sm-3">
+        <h1 class="alert alert-dark text-center"><i><b>SELECT THE MORE OPTION</b></i></h1>
+        <a href="{% url 'withdraw' %}" class="btn btn-primary">withdraw account</a><br><br>
+        <a href="{% url 'deposit' %}" class="btn btn-secondary">deposit account</a><br><br>
+        <a href="{% url 'exit' %}" class="btn btn-dark">exit account</a><br><br>
+        <a href="{% url 'add' %}" class="btn btn-success">Do you create account</a>
+        <a href="{% url 'show' %}" class="btn btn-dark">Show members</a>
+    </div>
+</div>
+
+{% endblock text %}
