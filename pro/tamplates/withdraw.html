@@ -1,31 +1,30 @@
 {% extends "base.html" %}
 {% block text %}
-<div class="div row sm-5">
-    <div class="div col-sm-5 offset-sm-3">
-        <h1 class="alert alert-success text-center"><i><b>Withdraw amount</b></i></h1>
-    </div>
-    <!-- Deposit Form -->
-    <form method="POST" action="{% url 'withdraw' %}">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="acc-no">Account Number</label>
-            <input type="text" id="acc-no" name="acc-no" class="form-control" required>
+<!-- Main container with background image -->
+<div class="container-fluid" style="background-image: url('https://media.istockphoto.com/id/1326817542/photo/group-of-people-queue-and-buying-ticket-at-the-movie-theater.jpg?s=1024x1024&w=is&k=20&c=ctBnT5n9-0RH5QhyLToHOZvxm4HjqYX_YgtVfyhERKo='); background-size: cover; background-position: center; height: 100vh;">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="card p-4 shadow-lg" style="width: 100%; max-width: 500px;">
+            <h1 class="alert alert-success text-center"><i><b>Withdraw Amount</b></i></h1>
+            <!-- Withdraw Form -->
+            <form method="POST" action="{% url 'withdraw' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="acc-no">Account Number</label>
+                    <input type="text" id="acc-no" name="acc-no" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" class="form-control" min="1" required>
+                </div><br>
+                <button type="submit" class="btn btn-primary btn-block">Withdraw</button>
+            </form>
+
+            <!-- Links to other pages -->
+            <div class="mt-3 text-center">
+                <a href="{% url 'show' %}" class="btn btn-secondary">Show Accounts</a>
+                <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="amount">Amount</label>
-            <input type="text" name="amount" class="form-control" min="1">
-        </div><br>
-        <input type="submit" value="withdraw" class="btn btn-primary"><br>
-    </form>
-
-    <!-- Links to other pages -->
-    <div class="mt-3">
-        <a href="{% url 'show' %}" class="btn btn-secondary">Show Accounts</a>
-        <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
     </div>
 </div>
-</div>
-
-
-
 {% endblock text %}

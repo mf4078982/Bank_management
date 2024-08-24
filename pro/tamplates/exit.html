@@ -1,14 +1,16 @@
 {% extends "base.html" %}
+
 {% block text %}
-<div class="div row">
-    <div class="div col-sm-5 offset-sm-3 alert alert-danger">
-        <h1 class="alert alert-success"><i><b>Account exit</b></i></h1>
-        <h5>thank you! your account exit</h5>
-        <h5>has been successfully exited</h5>
-        <a href="{% url 'home' %}" class="btn btn-dark">home</a>
-        <a href="{% url 'add' %}" class="btn btn-dark">Add page</a>
+<div class="container" style="background-image: url('https://media.istockphoto.com/id/1795167728/photo/growth-in-business-and-finance-growing-graphs-and-charts.jpg?s=1024x1024&w=is&k=20&c=EwasSJy-EA08zbuD8AbLUaZTOuOnewjvfnAHaQ9-qD4='); background-size: cover; background-position: center; padding: 50px; border-radius: 15px; color: white;">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 col-md-6 col-lg-4" style="background-color: rgba(0, 0, 0, 0.6); border-radius: 10px; padding: 30px;">
+            <h1 class="text-center" style="color: #28a745; margin-bottom: 20px;"><i><b>Account Exit</b></i></h1>
+            <h5 class="text-center mb-4">Thank you! Your account has been successfully exited.</h5>
+            <div class="text-center">
+                <a href="{% url 'home' %}" class="btn btn-light btn-lg">Home</a>
+                <a href="{% url 'add' %}" class="btn btn-light btn-lg">Add Page</a>
+            </div>
+        </div>
     </div>
 </div>
-
-
 {% endblock text %}

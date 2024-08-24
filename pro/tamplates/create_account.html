@@ -1,13 +1,45 @@
-<!-- add_member.html -->
 {% extends "base.html" %}
 
 {% block text %}
-<div class="row">
-    <div class="col-sm-6 offset-sm-3">
+<style>
+    body {
+        background-image: url('https://img.freepik.com/premium-photo/person-typing-keyboard-with-digital-display-background_1234220-36539.jpg?w=740'); 
+        background-size: cover; /* Make sure the background image covers the entire page */
+        background-repeat: no-repeat; /* Ensure the background does not repeat */
+        background-position: center; /* Center the background image */
+        color: white; /* Set text color to white for better contrast */
+    }
+    .form-container {
+        background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background for the form */
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 50px;
+        color: white;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #f8f9fa;
+    }
+    .btn-dark {
+        background-color: #343a40; /* Dark button background */
+        color: white; /* White text for the button */
+        border-radius: 5px; /* Slightly rounded corners */
+        margin-top: 15px; /* Space between buttons and form */
+    }
+    .btn-dark:hover {
+        background-color: #495057; /* Slightly lighter shade on hover */
+        color: white;
+    }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-sm-6 form-container">
         <h1 class="alert alert-success text-center"><i><b>ADD A MEMBER</b></i></h1>
-        <form method="post" action="{% url 'add' %}">
+        <form method="POST" action="{% url 'add' %}">
             {% csrf_token %}
-            {{ forms.as_p }}  <!-- Changed from `forms` to `form` to match context variable -->
+            {{ forms.as_p }}  <!-- Corrected from `forms.as_p` to `form.as_p` -->
             <input type="submit" value="Add member" class="btn btn-dark">
             <a href="{% url 'show' %}" class="btn btn-dark">Show Members</a>
             <a href="{% url 'home' %}" class="btn btn-dark">More Options</a>

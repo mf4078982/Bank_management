@@ -1,14 +1,43 @@
 {% extends "base.html" %}
 
 {% block text %}
-<div class="div row-sm-6">
-    <div class="div col-sm-6 offset-sm-3">
+<style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1494488180300-4c634d1b2124?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-repeat: no-repeat; /* Prevents the background image from repeating */
+        background-position: center; /* Centers the background image */
+        color: white; /* Sets text color to white for contrast */
+    }
+    .col-sm-6 {
+        background-color: rgba(0, 0, 0, 0.7); /* Adds a dark semi-transparent background to the content */
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 50px;
+        color: white; /* Ensures text is readable against the background */
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+    }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-sm-6">
         <h1 class="alert alert-dark text-center"><i><b>SELECT THE MORE OPTION</b></i></h1>
-        <a href="{% url 'withdraw' %}" class="btn btn-primary">withdraw account</a><br><br>
-        <a href="{% url 'deposit' %}" class="btn btn-secondary">deposit account</a><br><br>
-        <a href="{% url 'exit' %}" class="btn btn-dark">exit account</a><br><br>
-        <a href="{% url 'add' %}" class="btn btn-success">Do you create account</a>
-        <a href="{% url 'show' %}" class="btn btn-dark">Show members</a>
+        <a href="{% url 'withdraw' %}" class="btn btn-primary">Withdraw Account</a><br><br>
+        <a href="{% url 'deposit' %}" class="btn btn-secondary">Deposit Account</a><br><br>
+        <a href="{% url 'exit' %}" class="btn btn-danger">Exit Account</a><br><br>
+        <a href="{% url 'add' %}" class="btn btn-success">Create Account</a><br><br>
+        <a href="{% url 'show' %}" class="btn btn-dark">Show Members</a>
     </div>
 </div>
 
